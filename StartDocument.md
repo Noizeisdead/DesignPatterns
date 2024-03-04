@@ -1,40 +1,41 @@
 # Startdocument
-The application is a music player. It can play mp3 files that are added to the application. The function to look for mp3 files on the system should also be added. 
+The application is a music player. It can play mp3-files that are added to the application. 
+With this music player the user should have the ability to view their music sorted in created playlists or sorted on album, artist and genre.
+The user can add songs to a queue that will be played or play a song on it's own, the music can run in the background.
+The player had controls such as play, pause and skip a song.
 
-With the music player a user is able to play music in the background, create playlists, sort on mp3 files, create a queue and more. 
-
-- doelstelling 
 
 ## functionaliteiten (MoSCoW)
-Must have:
-- Controls: play, pause, skip
-- Volume
-- Make Playlist
-- queue
-- Read extra info from mp3 file 
-- Delete songs
-- List songs
+The requirements of the application are analysed and sorted using the MoSCoW-method. This helps to identify the importance of each requirement.
+**Must have's** need to be implemented into the application for it to work.
+**Should have's** are supposed to be in the application but the application will work without it.
+**Could have's** can be added to the application but not really important to the application.
+**Won't have's** will not be implemented into the application.
 
-Should have:
-- Like
-- Sort songs based on info
-- Edit mp3 files
-- Sort songs based on info
-
-Could have:
-- Search computer for MP3 files 
-
-Won't have:
-
-
-
+| Must                             | Should                   | Could                              | Won't               |
+| -------------------------------- | ------------------------ | ---------------------------------- | ------------------- |
+| Controls: play, pause, skip      | Like song                | Search device for mp3-files        | Internet connection |
+| Volume changing                  | Sort songs based on info | Change order of songs in playlists |                     |
+| Make playlist                    | Edit mp3 file info       |                                    |                     |
+| Make queue                       |                          |                                    |                     |
+| List songs                       |                          |                                    |                     |
+| Delete songs                     |                          |                                    |                     |
+| Add songs                        |                          |                                    |                     |
+| Read info from mp3 files         |                          |                                    |                     |
+| Sort on album, artist and genre  |                          |                                    |                     |
+| Music can play in the background |                          |                                    |                     |
 
 
 ## Design patterns
-Factory: Adding the mp3 files to the application on startup.
-Composite: Managing mp3's and playlists.
-Command: Controlls like pause, play and skip.
-Observer: Updating UI based on changes that are made during runtime.
+The following design patterns will be implemented into the application:
+
+| Design pattern | Usage                                                      |
+| -------------- | ---------------------------------------------------------- |
+| Comosite       | Managing mp3's and playlists.                              |
+| Command        | Controlls like pause, play and skip.                       |
+| Observer       | Updating UI based on changes that are made during runtime. |
+| Stratagy       | Sort on ablum, artist and genre.                           |
+
 
 ## Classdiagram
  - Input 
