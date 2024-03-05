@@ -31,15 +31,39 @@ The following design patterns will be implemented into the application:
 
 | Design pattern | Usage                                                      |
 | -------------- | ---------------------------------------------------------- |
-| Comosite       | Managing mp3's and playlists.                              |
-| Command        | Controlls like pause, play and skip.                       |
+| Composite      | Managing mp3's and playlists.                              |
+| Command        | Controlls like pause, play and skip.                       |X
 | Observer       | Updating UI based on changes that are made during runtime. |
-| Stratagy       | Sort on ablum, artist and genre.                           |
+| Strategy       | Sort on ablum, artist and genre.                           |X
 
 
 ## Classdiagram
- - Input 
- - Output
+```c++
+// Stragety Classes 
+Interface SortStrategy {
+    void sort(Arraylist<Songs>){}
+}
+
+
+public class SortByAlbum implements SortStrategy {
+    @Override
+    Public void sort(){
+    }
+}
+
+public class SortByArtist implements SortStrategy {
+    @Override
+    Public void sort(){
+    }
+}
+
+public class SortByGenre implements SortStrategy {
+    @Override
+    Public void sort(){
+    }
+}
+```
+
 
 ## Tests
  - Tests 
