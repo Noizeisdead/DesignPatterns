@@ -4,7 +4,6 @@ With this music player the user should have the ability to view their music sort
 The user can add songs to a queue that will be played or play a song on it's own, the music can run in the background.
 The player had controls such as play, pause and skip a song.
 
-
 ## functionaliteiten (MoSCoW)
 The requirements of the application are analysed and sorted using the MoSCoW-method. This helps to identify the importance of each requirement.
 **Must have's** need to be implemented into the application for it to work.
@@ -33,44 +32,10 @@ The following design patterns will be implemented into the application:
 | -------------- | ---------------------------------------------------------- |
 | Composite      | Managing mp3's and playlists.                              |
 | Command        | Controlls like pause, play and skip.                       |
-| Observer       | Updating UI based on changes that are made during runtime. |
+| Observer       | Updating UI based on changes that are made during runtime. (Not used)|
 | Strategy       | Sort on ablum, artist and genre.                           |
 
 
 ## Classdiagram
 
 ![ClassDiagram](ClassDiagram.jpg "ClassDiagram")
-
-sortservice: Musicplayer has object sService or SService askes song list, sorts and gives back.
-Extentie pijlen 
-
-
-```c++
-// Stragety Classes 
-Interface SortStrategy {
-    void sort(Arraylist<Songs>){}
-}
-
-
-public class SortByAlbum implements SortStrategy {
-    @Override
-    Public void sort(){
-    }
-}
-
-public class SortByArtist implements SortStrategy {
-    @Override
-    Public void sort(){
-    }
-}
-
-public class SortByGenre implements SortStrategy {
-    @Override
-    Public void sort(){
-    }
-}
-```
-
-
-## Tests
- - Tests 
