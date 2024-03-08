@@ -39,7 +39,7 @@ The following design patterns will be implemented into the application:
 
 ## Classdiagram
 
-![ClassDiagram](ClassDiagram1.jpg "ClassDiagram")
+![ClassDiagram](ClassDiagram.jpg "ClassDiagram")
 
 sortservice: Musicplayer has object sService or SService askes song list, sorts and gives back.
 Extentie pijlen 
