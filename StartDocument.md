@@ -32,12 +32,19 @@ The following design patterns will be implemented into the application:
 | Design pattern | Usage                                                      |
 | -------------- | ---------------------------------------------------------- |
 | Composite      | Managing mp3's and playlists.                              |
-| Command        | Controlls like pause, play and skip.                       |X
+| Command        | Controlls like pause, play and skip.                       |
 | Observer       | Updating UI based on changes that are made during runtime. |
-| Strategy       | Sort on ablum, artist and genre.                           |X
+| Strategy       | Sort on ablum, artist and genre.                           |
 
 
 ## Classdiagram
+
+![ClassDiagram](ClassDiagram1.jpg "ClassDiagram")
+
+sortservice: Musicplayer has object sService or SService askes song list, sorts and gives back.
+Extentie pijlen 
+
+
 ```c++
 // Stragety Classes 
 Interface SortStrategy {
