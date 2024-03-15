@@ -4,6 +4,12 @@ COPY . /usr/src/MusicPlayer
 
 WORKDIR  /usr/src/MusicPlayer
 
-RUN make
+RUN apt-get update &&  apt-get install libgl-dev -y
 
-CMD [ "./output/main" ]
+RUN make 
+
+RUN chmod +x ./output/main
+
+CMD [ "chmod +x ./output/main", "./output/main" ]
+
+
