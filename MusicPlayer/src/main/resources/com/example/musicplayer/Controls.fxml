@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<HBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.example.musicplayer.ControlsController"
+      prefHeight="50" spacing="10">
+
+    <!-- Play Button -->
+    <Button text="Play" onAction="#play"/>
+
+    <!-- Pause Button -->
+    <Button text="Pause" onAction="#pause"/>
+
+    <!-- Volume Slider -->
+    <Slider fx:id="volumeSlider" min="0" max="100" value="50">
+<!--        <HBox.margin>-->
+<!--            <fx:constant fx:constant="10" />-->
+<!--        </HBox.margin>-->
+<!--        <HBox.hgrow>-->
+<!--            <Priority value="ALWAYS"/>-->
+<!--        </HBox.hgrow>-->
+    </Slider>
+
+    <Slider fx:id="progressBar" min="0" max="100" value="0" prefWidth="200"/>
+
+</HBox>

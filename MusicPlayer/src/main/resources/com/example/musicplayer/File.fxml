@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox spacing="20.0" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.example.musicplayer.FileController">
+    <fx:include source="navbar.fxml"></fx:include>
+    <HBox>
+        <Label text="Choose File:"/>
+        <Button text="Browse" onAction="#browseFile"/>
+        <Label fx:id="selectedFileLabel"/>
+    </HBox>
+
+    <Button text="Submit" onAction="#submitForm"/>
+
+    <Button text="Read File" onAction="#readMetadata"/>
+    <Button text="Write File" onAction="#writeMetaData"/>
+    <fx:include source="Controls.fxml"/>
+</VBox>
+
+
