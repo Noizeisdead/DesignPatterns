@@ -61,7 +61,7 @@ int main(int, char**)
 #endif
 
     // Create window with graphics context
-    GLFWwindow* window = glfwCreateWindow(1280, 720, "Dear ImGui GLFW+OpenGL3 example", nullptr, nullptr);
+    GLFWwindow* window = glfwCreateWindow(1280, 720, "Music Player", nullptr, nullptr);
     if (window == nullptr)
         return 1;
     glfwMakeContextCurrent(window);
@@ -72,11 +72,10 @@ int main(int, char**)
     ImGui::CreateContext();
     ImGuiIO& io = ImGui::GetIO(); (void)io;
     io.ConfigFlags |= ImGuiConfigFlags_NavEnableKeyboard;     // Enable Keyboard Controls
-    io.ConfigFlags |= ImGuiConfigFlags_NavEnableGamepad;      // Enable Gamepad Controls
 
     // Setup Dear ImGui style
     ImGui::StyleColorsDark();
-    //ImGui::StyleColorsLight();
+    // ImGui::StyleColorsLight();
 
     // Setup Platform/Renderer backends
     ImGui_ImplGlfw_InitForOpenGL(window, true);
@@ -100,9 +99,9 @@ int main(int, char**)
     //IM_ASSERT(font != nullptr);
 
     // Our state
-    bool show_demo_window = true;
-    bool show_another_window = false;
-    ImVec4 clear_color = ImVec4(0.45f, 0.55f, 0.60f, 1.00f);
+    bool show_demo_window = false;
+    bool show_another_window = true;
+    ImVec4 clear_color = ImVec4(0.45f, 0.0f, 0.70f, 0.70f); //R,G,B, SATURATION
 
     // Main loop
 #ifdef __EMSCRIPTEN__
@@ -143,7 +142,7 @@ int main(int, char**)
 
             ImGui::SliderFloat("float", &f, 0.0f, 1.0f);            // Edit 1 float using a slider from 0.0f to 1.0f
             ImGui::ColorEdit3("clear color", (float*)&clear_color); // Edit 3 floats representing a color
-
+            // ImGui::ColorEdit3("PINK", (float*)0.5f);
             if (ImGui::Button("Button"))                            // Buttons return true when clicked (most widgets return true when edited/activated)
                 counter++;
             ImGui::SameLine();
@@ -153,16 +152,78 @@ int main(int, char**)
             ImGui::End();
         }
 
-        // 3. Show another simple window.
-        if (show_another_window)
+  ImGui::BeginMainMenuBar();
+     if (ImGui::BeginMenu("File"))
         {
-            ImGui::Begin("Another Window", &show_another_window);   // Pass a pointer to our bool variable (the window will have a closing button that will clear the bool when clicked)
-            ImGui::Text("Hello from another window!");
-            if (ImGui::Button("Close Me"))
-                show_another_window = false;
-            ImGui::End();
-        }
+            ImGui::Begin("File");                       
 
+            ImGui::Text("Add a song here:"); 
+
+        ImGui::End();
+        
+        fileDialog.Display();
+        
+        if(fileDialog.HasSelected())
+        {
+            std::cout << "Selected filename" << fileDialog.GetSelected().string() << std::endl;
+            fileDialog.ClearSelected();
+        }
+        
+        //...do other stuff like ImGui::Render();
+    }
+            ImGui::End();
+            ImGui::EndMenu();
+        }
+        
+     if (ImGui::BeginMenu("Songs"))
+        {
+            ImGui::EndMenu();
+        }
+     if (ImGui::BeginMenu("Albums"))
+        {
+            ImGui::EndMenu();
+        }
+     if (ImGui::BeginMenu("Playlists"))
+        {
+            ImGui::EndMenu();
+        }
+     if (ImGui::BeginMenu("Genres"))
+        {
+            ImGui::EndMenu();
+        }
+     if (ImGui::BeginMenu("About"))
+        {
+            
+            ImGui::Begin("About");                       
+
+            ImGui::Text("This music player is able to play your imported music."); 
+            ImGui::Text("Import music by clicking on 'File' in the navbar.");
+            ImGui::Text("Viewing songs, playlists or albums can be don through the navbar too.");
+            ImGui::Text("Start, pause or skip a song by using the controls in the bottom bar.");              
+
+            ImGui::End();
+            ImGui::EndMenu();
+        }
+            
+    ImGui::EndMainMenuBar();
+
+// Example footer
+        ImGui::SetNextWindowPos(ImVec2(0, ImGui::GetIO().DisplaySize.y - 100));
+        ImGui::SetNextWindowSize(ImVec2(ImGui::GetIO().DisplaySize.x, 100));
+        ImGui::Begin("Footer", nullptr, ImGuiWindowFlags_NoTitleBar | ImGuiWindowFlags_NoResize | ImGuiWindowFlags_NoMove | ImGuiWindowFlags_NoCollapse | ImGuiWindowFlags_NoSavedSettings | ImGuiWindowFlags_NoScrollbar);
+        // Example round button
+    
+        ImVec2 buttonSize(180, 80);
+        ImVec2 buttonPos = ImGui::GetWindowPos();
+        buttonPos.x += (ImGui::GetWindowWidth() - buttonSize.x) * 0.5f;
+        buttonPos.y += (ImGui::GetWindowHeight() - buttonSize.y) * 0.5f;
+        ImGui::SetCursorPos(buttonPos);
+        
+        if (ImGui::Button("Round Button", buttonSize)) {
+            // Handle button click event
+        }
+        
+        ImGui::End();
         // Rendering
         ImGui::Render();
         int display_w, display_h;
