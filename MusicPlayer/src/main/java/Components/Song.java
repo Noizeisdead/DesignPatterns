@@ -1,72 +1,40 @@
 package Components;
 
-import com.mpatric.mp3agic.Mp3File;
-import javafx.scene.media.Media;
-
 import java.io.File;
-import java.time.Duration;
 
-public class Song {
+public class Song implements MusicComponent
+{
     private String name;
-    private Duration duration;
-    private Mp3File content;
-    private Artist artist;
+    private File content;
 
-//    public Song(String name, Duration duration, Media content, Artist artist) {
-//        this.name = name;
-//        this.duration = duration;
-//        this.content = content;
-//        this.artist = artist;
-//    }
 
-    public Song(String name, Mp3File content) {
+    public Song(String name, File content)
+    {
         this.name = name;
         this.content = content;
-//        this.duration = duration;
-//        this.content = content;
-//        this.artist = artist;
-    }
-    public void Edit(){
-
-    }
-    public void Delete(){
-
-    }
-    public void Play(){
-
     }
 
-    //Getters and setters
-    public String getName() {
+    @Override
+    public void displayInfo()
+    {
+        System.out.println("Song: " +  this.getName());
+    }
+
+    public String getName()
+    {
         return name;
     }
 
-    public void setName(String name) {
+    public void setName(String name)
+    {
         this.name = name;
     }
 
-    public Duration getDuration() {
-        return duration;
+    public File getContent() {
+        return content;
     }
 
-    public void setDuration(Duration duration) {
-        this.duration = duration;
+    public void setContent(File content) {
+        this.content = content;
     }
-
-//    public Media getContent() {
-//        return content;
-//    }
-
-//    public void setContent(Media content) {
-//        this.content = content;
-//    }
-
-    public Artist getArtist() {
-        return artist;
-    }
-
-    public void setArtist(Artist artist) {
-        this.artist = artist;
-    }
-
 }
