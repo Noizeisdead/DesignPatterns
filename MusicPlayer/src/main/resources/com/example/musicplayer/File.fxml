@@ -8,7 +8,7 @@
 
 <VBox spacing="20.0" xmlns:fx="http://javafx.com/fxml"
       fx:controller="com.example.musicplayer.FileController">
-    <fx:include source="navbar.fxml"></fx:include>
+    <fx:include source="navbar.fxml"/>
     <HBox>
         <Label text="Choose File:"/>
         <Button text="Browse" onAction="#browseFile"/>
