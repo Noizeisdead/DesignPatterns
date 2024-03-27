@@ -52,7 +52,7 @@ public class NavBarController {
         SongsController controller = loader.getController();
 
 
-        Stage stage = (Stage) fileButton.getScene().getWindow();
+        Stage stage = (Stage) songButton.getScene().getWindow();
         stage.setScene(new Scene(root));
         stage.show();
     }
