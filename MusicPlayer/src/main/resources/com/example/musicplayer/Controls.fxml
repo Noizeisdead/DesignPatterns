@@ -8,14 +8,14 @@
 
 <HBox xmlns="http://javafx.com/javafx"
       xmlns:fx="http://javafx.com/fxml"
-      fx:controller="com.example.musicplayer.ControlsController"
+      fx:controller="Command.Controller"
       prefHeight="50" spacing="10">
 
     <!-- Play Button -->
-    <Button text="Play" onAction="#play"/>
+    <Button text="Play" onAction="#PressPlay"/>
 
     <!-- Pause Button -->
-    <Button text="Pause" onAction="#pause"/>
+    <Button text="Pause" onAction="#PressPause"/>
 
     <!-- Volume Slider -->
     <Slider fx:id="volumeSlider" min="0" max="100" value="50">
