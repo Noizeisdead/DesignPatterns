@@ -2,25 +2,29 @@ package Components;
 
 import java.util.List;
 
-public class Genre extends MusicComposite
+public class Playlist extends MusicComposite
 {
-    public Genre(String title) {
+    public Playlist(String title)
+    {
         super(title);
     }
 
     @Override
-    public void add(MusicComponent song) {
+    public void add(MusicComponent song)
+    {
         super.add(song);
     }
 
     @Override
-    public void remove(MusicComponent song) {
+    public void remove(MusicComponent song)
+    {
         super.remove(song);
     }
 
     @Override
-    public void displayInfo() {
-        System.out.println("Songs in genre " + this.getTitle() + ":");
+    public void displayInfo()
+    {
+        System.out.println("Songs in playlist " + this.getTitle() + ":");
         List<MusicComponent> songs = super.getComponents();
         for (MusicComponent song : songs)
         {
@@ -29,22 +33,26 @@ public class Genre extends MusicComposite
     }
 
     @Override
-    public String getTitle() {
+    public String getTitle()
+    {
         return super.getTitle();
     }
 
     @Override
-    public void setTitle(String title) {
+    public void setTitle(String title)
+    {
         super.setTitle(title);
     }
 
     @Override
-    public List<MusicComponent> getComponents() {
+    public List<MusicComponent> getComponents()
+    {
         return super.getComponents();
     }
 
     @Override
-    public void setComponents(List<MusicComponent> songs) {
+    public void setComponents(List<MusicComponent> songs)
+    {
         super.setComponents(songs);
     }
 }

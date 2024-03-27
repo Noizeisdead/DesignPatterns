@@ -2,9 +2,9 @@ package Components;
 
 import java.util.List;
 
-public class Genre extends MusicComposite
+public class Album extends MusicComposite
 {
-    public Genre(String title) {
+    public Album(String title) {
         super(title);
     }
 
@@ -20,7 +20,7 @@ public class Genre extends MusicComposite
 
     @Override
     public void displayInfo() {
-        System.out.println("Songs in genre " + this.getTitle() + ":");
+        System.out.println("Album: " + this.getTitle());
         List<MusicComponent> songs = super.getComponents();
         for (MusicComponent song : songs)
         {
