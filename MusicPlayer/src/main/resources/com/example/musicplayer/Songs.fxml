@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.scene.text.Text?>
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.example.musicplayer.SongsController"
+            prefHeight="400.0" prefWidth="600.0">
+
+
+    <VBox xmlns="http://javafx.com/javafx"
+          xmlns:fx="http://javafx.com/fxml"
+          spacing="10">
+        <fx:include source="navbar.fxml"></fx:include>
+
+        <!-- Song Details -->
+        <Text>_________</Text>
+        <Label fx:id="songLabel" text="Song Name: " />
+        <Label fx:id="artistLabel" text="Artist: " />
+        <Label fx:id="albumLabel" text="Album: " />
+        <Label fx:id="yearLabel" text="Year: " />
+        <Text>_________</Text>
+        <fx:include source="Controls.fxml"></fx:include>
+
+    </VBox>
+</AnchorPane>
