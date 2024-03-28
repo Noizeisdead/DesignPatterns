@@ -1,25 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
 
-<VBox spacing="20.0" xmlns:fx="http://javafx.com/fxml"
-      fx:controller="com.example.musicplayer.FileController">
-    <fx:include source="navbar.fxml"/>
-    <HBox>
-        <Label text="Choose File:"/>
-        <Button text="Browse" onAction="#browseFile"/>
-        <Label fx:id="selectedFileLabel"/>
-    </HBox>
-
-    <Button text="Submit" onAction="#submitForm"/>
-
-    <Button text="Read File" onAction="#readMetadata"/>
-    <Button text="Write File" onAction="#writeMetaData"/>
-    <fx:include source="Controls.fxml"/>
+<VBox prefHeight="720.0" prefWidth="1080.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/21" fx:controller="com.example.musicplayer.FileController">
+   <SplitPane dividerPositions="0.07158753709198813" prefHeight="680.0" prefWidth="1080.0" scaleShape="false" VBox.vgrow="ALWAYS">
+      <items>
+          <fx:include prefHeight="680.0" source="navbar.fxml" />
+         <Pane prefHeight="680.0" prefWidth="200.0">
+            <children>
+                <HBox alignment="CENTER" spacing="5.0">
+                    <Label text="Choose File:" />
+                    <Button onAction="#browseFile" text="Browse">
+                    <Label fx:id="selectedFileLabel"/>
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </Button>
+                  <padding>
+                     <Insets left="5.0" top="5.0" />
+                  </padding>
+                </HBox>
+            
+                   <Button layoutX="15.0" layoutY="41.0" onAction="#readMetadata" text="Read File" />
+                <Button layoutX="14.0" layoutY="81.0" onAction="#writeMetaData" text="Write File" />
+            
+                               <Button layoutX="20.0" layoutY="124.0" onAction="#submitForm" text="Submit" />
+            </children>
+         </Pane>
+      </items>
+   </SplitPane>
+    <fx:include source="Controls.fxml" />
 </VBox>
-
-

@@ -9,7 +9,7 @@
      <Button fx:id="songButton" onAction="#onSongsButtonClick" text="Songs" />
      <Button fx:id="playlistButton" onAction="#onPlaylistsButtonClick" text="Playlists" />
      <Button fx:id="albumButton" onAction="#onAlbumsButtonClick" text="Albums" />
-     <Button fx:id="GenreButton" onAction="#onGenresButtonClick" text="Genres" />
+     <Button fx:id="genreButton" onAction="#onGenresButtonClick" text="Genres" />
      <Button fx:id="aboutButton" onAction="#onAboutButtonClick" text="About" />
    <padding>
       <Insets left="5.0" top="5.0" />
