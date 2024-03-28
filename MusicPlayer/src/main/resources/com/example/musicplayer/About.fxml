@@ -11,7 +11,7 @@
 <VBox minHeight="720.0" minWidth="1080.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.musicplayer.AboutController">
    <SplitPane dividerPositions="0.07158753709198813" prefHeight="680.0" prefWidth="1080.0" scaleShape="false" VBox.vgrow="ALWAYS">
       <items>
-          <fx:include prefHeight="680.0" source="navbar.fxml" />
+          <fx:include prefHeight="680.0" source="Navbar.fxml" />
           <AnchorPane>
           <padding>
               <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />

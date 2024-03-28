@@ -5,13 +5,13 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox minHeight="720.0" minWidth="1080.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.musicplayer.SongsController">
+<VBox minHeight="720.0" minWidth="1080.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.musicplayer.ArtistController">
     <SplitPane dividerPositions="0.07158753709198813" prefHeight="680.0" prefWidth="1080.0" scaleShape="false" VBox.vgrow="ALWAYS">
         <items>
             <fx:include prefHeight="680.0" source="Navbar.fxml" />
             <AnchorPane>
                 <children>
-                   <ListView fx:id="songsList" prefHeight="680.0" prefWidth="1005.0" />
+                   <ListView fx:id="artistList" prefHeight="680.0" prefWidth="1005.0" />
                 </children>
             </AnchorPane>
         </items>

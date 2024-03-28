@@ -1,4 +1,5 @@
 package com.example.musicplayer;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -9,6 +10,9 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class NavBarController {
+
+    @FXML
+    private Button artistButton;
 
     @FXML
     private Button fileButton;
@@ -109,6 +113,20 @@ public class NavBarController {
         stage.setScene(new Scene(root));
         stage.show();
 
+    }
+
+    @FXML
+    protected void onArtistButtonClick() throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("Artists.fxml"));
+        Parent root = loader.load();
+
+        // Access the controller of the secondary FXML
+        ArtistController controller = loader.getController();
+
+
+        Stage stage = (Stage) artistButton.getScene().getWindow();
+        stage.setScene(new Scene(root));
+        stage.show();
     }
 }
 

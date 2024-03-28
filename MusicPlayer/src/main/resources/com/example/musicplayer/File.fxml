@@ -11,7 +11,7 @@
 <VBox prefHeight="720.0" prefWidth="1080.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/21" fx:controller="com.example.musicplayer.FileController">
    <SplitPane dividerPositions="0.07158753709198813" prefHeight="680.0" prefWidth="1080.0" scaleShape="false" VBox.vgrow="ALWAYS">
       <items>
-          <fx:include prefHeight="680.0" source="navbar.fxml" />
+          <fx:include prefHeight="680.0" source="Navbar.fxml" />
          <Pane prefHeight="680.0" prefWidth="200.0">
             <children>
                 <HBox alignment="CENTER" spacing="5.0">
