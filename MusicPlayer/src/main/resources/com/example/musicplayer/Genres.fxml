@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+
+<?import javafx.scene.control.ListView?>
+<VBox minHeight="720.0" minWidth="1080.0" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="com.example.musicplayer.GenreController">
+   <SplitPane dividerPositions="0.07158753709198813" prefHeight="680.0" prefWidth="1080.0" scaleShape="false" VBox.vgrow="ALWAYS">
+      <items>
+          <fx:include prefHeight="680.0" source="Navbar.fxml" />
+          <AnchorPane>
+              <children>
+                  <ListView fx:id="genreList" prefHeight="680.0" prefWidth="1005.0" />
+              </children>
+          </AnchorPane>
+      </items>
+   </SplitPane>
+    <fx:include source="Controls.fxml" />
+</VBox>

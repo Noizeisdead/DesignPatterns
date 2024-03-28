@@ -15,8 +15,6 @@ import java.io.File;
 public class FileController {
     @FXML
     private Label selectedFileLabel;
-//    @FXML
-//    private Label
     private File selectedFile;
 
     @FXML

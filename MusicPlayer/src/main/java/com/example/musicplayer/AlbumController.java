@@ -1,24 +1,21 @@
 package com.example.musicplayer;
 
-
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.fxml.FXML;
 import javafx.scene.control.ListView;
 
-public class SongsController {
-    @FXML
-    private ListView<String> songsList;
+public class AlbumController {
+    public ListView<String> albumsList;
 
     public void initialize()
     {
         ObservableList<String> items = FXCollections.observableArrayList(
                 "Song1", "Song2", "Song3"
         );
-        songsList.setItems(items);
+        albumsList.setItems(items);
 
-        songsList.setOnMouseClicked(event -> {
-            String selectedItem = songsList.getSelectionModel().getSelectedItem();
+        albumsList.setOnMouseClicked(event -> {
+            String selectedItem = albumsList.getSelectionModel().getSelectedItem();
             System.out.println("Selected song: " + selectedItem);
         });
     }

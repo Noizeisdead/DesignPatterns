@@ -1,6 +1,7 @@
 package com.example.musicplayer;
 
 import Components.Artist;
+import Components.Genre;
 import Components.Song;
 import com.mpatric.mp3agic.ID3v2;
 import com.mpatric.mp3agic.InvalidDataException;
@@ -8,6 +9,7 @@ import com.mpatric.mp3agic.Mp3File;
 import com.mpatric.mp3agic.UnsupportedTagException;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.media.Media;
 import javafx.stage.FileChooser;
@@ -20,35 +22,29 @@ import java.time.Duration;
 public class HelloApplication extends Application {
     @Override
     public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("hello-view.fxml"));
+        // Load all pages that need a controller
+        FXMLLoader helloLoader = new FXMLLoader(HelloApplication.class.getResource("Hello.fxml"));
+        FXMLLoader fileLoader = new FXMLLoader(HelloApplication.class.getResource("File.fxml"));
+        FXMLLoader songsLoader = new FXMLLoader(HelloApplication.class.getResource("Songs.fxml"));
+        FXMLLoader albumsLoader = new FXMLLoader(HelloApplication.class.getResource("Albums.fxml"));
+        FXMLLoader playlistLoader = new FXMLLoader(HelloApplication.class.getResource("Playlists.fxml"));
+        FXMLLoader genreLoader = new FXMLLoader(HelloApplication.class.getResource("Genres.fxml"));
 
-        Scene scene = new Scene(fxmlLoader.load(), 320, 240);
+        // Load controllers
+        HelloController helloController = helloLoader.getController();
+        FileController fileController = fileLoader.getController();
+        SongsController songsController = songsLoader.getController();
+        AlbumController albumController = albumsLoader.getController();
+        PlaylistController playlistController = playlistLoader.getController();
+        GenreController genreController = genreLoader.getController();
+
+        Scene scene = new Scene(helloLoader.load(), 1080, 720);
         stage.setTitle("Hello!");
         stage.setScene(scene);
         stage.show();
     }
 
-    public static void main(String[] args) throws InvalidDataException, UnsupportedTagException, IOException {
-
-        FileController fileController = new FileController();
-        File dir = new File("./src/main/resources/Songs");
-        File[] directoryListing = dir.listFiles();
-
-        System.out.println("aaaa");
-        if (directoryListing != null) {
-            System.out.println("BBBB");
-            for (File child : directoryListing) {
-                Mp3File mp3file = new Mp3File(child);
-                // Do something with child
-                ID3v2 id3v2Tag = mp3file.getId3v2Tag();
-                System.out.println("Title: " + id3v2Tag.getTitle());
-                System.out.println("Artist: " + id3v2Tag.getArtist());
-                System.out.println("Album: " + id3v2Tag.getAlbum());
-                System.out.println("Year: " + id3v2Tag.getYear());
-                new Song(id3v2Tag.getTitle(), mp3file);
-            }
-
-        }
+    public static void main(String[] args) {
         launch();
     }
 }
